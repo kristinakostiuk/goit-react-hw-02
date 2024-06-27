@@ -1,18 +1,9 @@
 import css from './Options.module.css';
-export default function Options({ setFeedback, totalFeedback }) {
-  const updateFeedback = (type) => {
-    setFeedback((prevFeedback) => ({
-      ...prevFeedback,
-      [type]: prevFeedback[type] + 1,
-    }));
-  };
-  const resetFeedback = () => {
-    setFeedback({
-      good: 0,
-      neutral: 0,
-      bad: 0,
-    });
-  };
+export default function Options({
+  updateFeedback,
+  resetFeedback,
+  totalFeedback,
+}) {
   return (
     <div className={css.options}>
       <button onClick={() => updateFeedback('good')}>Good</button>
